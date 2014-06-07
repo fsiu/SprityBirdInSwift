@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MaT-l1-2kX"/>
+                        <viewControllerLayoutGuide type="bottom" id="suH-NP-539"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CH2-gm-LcR" userLabel="gameView" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiZ-lt-7NF" userLabel="getReadyView">
+                                        <rect key="frame" x="0.0" y="188" width="320" height="192"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="get_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="yG3-Wq-3CO">
+                                                <rect key="frame" x="30" y="0.0" width="260" height="45"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taptap.png" translatesAutoresizingMaskIntoConstraints="NO" id="ha9-c0-ZRk">
+                                                <rect key="frame" x="40" y="62" width="240" height="110"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj7-Pp-F25" userLabel="gameOverView">
+                                        <rect key="frame" x="0.0" y="188" width="320" height="220"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9M-XD-v6x" customClass="GameViewController" customModule="SprityBirdInSwift" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="0.0" width="260" height="45"/>
+                                                <connections>
+                                                    <outlet property="bestScoreLabel" destination="Czi-Ai-JAO" id="oLu-EV-8b4"/>
+                                                    <outlet property="currentScore" destination="hx9-qP-Lbk" id="Vl7-3h-DWP"/>
+                                                    <outlet property="gameOverView" destination="uj7-Pp-F25" id="7fW-KQ-IwF"/>
+                                                    <outlet property="gameView" destination="CH2-gm-LcR" id="DKe-oN-zhB"/>
+                                                    <outlet property="medalImageView" destination="M3R-fY-Sp5" id="BQe-r7-now"/>
+                                                    <outlet property="view" destination="kh9-bI-dsS" id="vbE-Pa-WpG"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal_plate.png" translatesAutoresizingMaskIntoConstraints="NO" id="cqe-Le-Pco">
+                                                <rect key="frame" x="47" y="62" width="226" height="116"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal_bronze.png" translatesAutoresizingMaskIntoConstraints="NO" id="M3R-fY-Sp5">
+                                                <rect key="frame" x="73" y="104" width="44" height="44"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx9-qP-Lbk">
+                                                <rect key="frame" x="199" y="94" width="50" height="21"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                                <color key="textColor" red="0.34275350765306123" green="0.19899377777041721" blue="0.18746079285708397" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czi-Ai-JAO">
+                                                <rect key="frame" x="199" y="135" width="50" height="21"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                                <color key="textColor" red="0.34275350770000002" green="0.19899377779999999" blue="0.18746079290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="bestScoreLabel" destination="Czi-Ai-JAO" id="Ao2-Im-y2o"/>
+                        <outlet property="currentScore" destination="hx9-qP-Lbk" id="Dqg-jM-hQ6"/>
+                        <outlet property="gameOverView" destination="uj7-Pp-F25" id="bUg-BH-SB4"/>
+                        <outlet property="gameView" destination="CH2-gm-LcR" id="qKO-Rq-n79"/>
+                        <outlet property="getReadyView" destination="NiZ-lt-7NF" id="AJN-DY-6nS"/>
+                        <outlet property="medalImageView" destination="M3R-fY-Sp5" id="HgQ-jZ-BVo"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="FHi-9B-LmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="game_over.png" width="198" height="38"/>
+        <image name="get_ready.png" width="130" height="40"/>
+        <image name="medal_bronze.png" width="44" height="44"/>
+        <image name="medal_plate.png" width="226" height="116"/>
+        <image name="taptap.png" width="120" height="100"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
