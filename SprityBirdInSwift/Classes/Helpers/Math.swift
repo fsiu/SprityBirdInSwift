@@ -8,16 +8,18 @@
 
 import Foundation
 
-class Math {
-    class var seed = 0;
+struct Math {
+    static var seed: UInt32 = 0;
     
-    class func setRandomSeed(seed: UInt64) {
-        self.seed = seed;
-        srand(self.seed);
+    func setRandomSeed(seed: UInt32) {
+        Math.seed = seed;
+        srand(seed);
     }
     
-    class func randomFloatBetween(min: Float, max: Float) {
-        let random =  ((rand()%RAND_MAX)/(RAND_MAX*1.0))*(max-min)+min;
+    func randomFloatBetween(min: Float, max: Float) -> Float {
+        let randMaxNumerator = Float(rand() % RAND_MAX);
+        let randMaxDivisor = Float(RAND_MAX) * 1.0;
+        let random: Float = Float((randMaxNumerator / randMaxDivisor) * (max-min)) + Float(min);
         return random;
     }
 }

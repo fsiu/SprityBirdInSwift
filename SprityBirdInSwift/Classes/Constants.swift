@@ -9,8 +9,8 @@
 import Foundation
 
 struct Constants {
-    static let BACK_BIT_MASK = 0x1 << 0;
-    static let BIRD_BIT_MASK = 0x1 << 1;
-    static let FLOOR_BIT_MASK = 0x1 << 2;
-    static let BLOCK_BIT_MASK = 0x1 << 3;
+    static let BACK_BIT_MASK: UInt32 = 0x1 << 0;
+    static let BIRD_BIT_MASK: UInt32 = 0x1 << 1;
+    static let FLOOR_BIT_MASK: UInt32 = 0x1 << 2;
+    static let BLOCK_BIT_MASK: UInt32 = 0x1 << 3;
 }

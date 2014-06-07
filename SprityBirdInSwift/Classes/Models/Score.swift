@@ -9,13 +9,13 @@
 import Foundation
 
 struct Score {
-    static func registerScore(score: NSInteger) {
+    static func registerScore(score: Int) {
         if(score > Score.bestScore()) {
             setBestScore(score);
         }
     }
     
-    static func setBestScore(bestScore: NSInteger) {
+    static func setBestScore(bestScore: Int) {
         let userDefaults = NSUserDefaults.standardUserDefaults();
         userDefaults.setInteger(bestScore, forKey: "bestScore");
         userDefaults.synchronize();

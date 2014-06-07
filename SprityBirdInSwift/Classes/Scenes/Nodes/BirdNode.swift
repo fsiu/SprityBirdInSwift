@@ -40,7 +40,7 @@ class BirdNode: SKSpriteNode {
         self.runAction(self.flapForever, withKey: "flapForever");
     }
     
-    func update(currentTime: UInt64) {
+    func update(currentTime: NSTimeInterval) {
         if(!self.physicsBody) {
             if(Position.deltaPosY > VERTICAL_DELTA) {
                 Position.goingUp = false;
@@ -53,7 +53,7 @@ class BirdNode: SKSpriteNode {
             self.position = CGPointMake(self.position.x, self.position.y);
             Position.deltaPosY += displacement;
         }
-        self.zRotation = M_PI * self.physicsBody.velocity.dy * 0.0005;
+        self.zRotation = CGFloat(M_PI) * self.physicsBody.velocity.dy * 0.0005;
     }
     
     func startPlaying() {
