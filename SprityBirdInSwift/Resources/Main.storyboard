@@ -34,16 +34,8 @@
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj7-Pp-F25" userLabel="gameOverView">
                                         <rect key="frame" x="0.0" y="188" width="320" height="220"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9M-XD-v6x" customClass="GameViewController" customModule="SprityBirdInSwift" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9M-XD-v6x">
                                                 <rect key="frame" x="30" y="0.0" width="260" height="45"/>
-                                                <connections>
-                                                    <outlet property="bestScoreLabel" destination="Czi-Ai-JAO" id="oLu-EV-8b4"/>
-                                                    <outlet property="currentScore" destination="hx9-qP-Lbk" id="Vl7-3h-DWP"/>
-                                                    <outlet property="gameOverView" destination="uj7-Pp-F25" id="7fW-KQ-IwF"/>
-                                                    <outlet property="gameView" destination="CH2-gm-LcR" id="DKe-oN-zhB"/>
-                                                    <outlet property="medalImageView" destination="M3R-fY-Sp5" id="BQe-r7-now"/>
-                                                    <outlet property="view" destination="kh9-bI-dsS" id="vbE-Pa-WpG"/>
-                                                </connections>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medal_plate.png" translatesAutoresizingMaskIntoConstraints="NO" id="cqe-Le-Pco">
                                                 <rect key="frame" x="47" y="62" width="226" height="116"/>

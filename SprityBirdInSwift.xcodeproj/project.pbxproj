@@ -11,6 +11,7 @@
 		6D00496719424141008F317A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00496619424141008F317A /* GameViewController.swift */; };
 		6D00496C19424141008F317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D00496B19424141008F317A /* Images.xcassets */; };
 		6D00497819424142008F317A /* SprityBirdInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */; };
+		6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D376EC01942FE0D004FBF9D /* Main.storyboard */; };
 		6DE9D7CF194243DA0090AC80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7CE194243DA0090AC80 /* Score.swift */; };
 		6DE9D7D2194247F90090AC80 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D1194247F90090AC80 /* BirdNode.swift */; };
 		6DE9D7D4194261D00090AC80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D3194261D00090AC80 /* Constants.swift */; };
@@ -18,8 +19,6 @@
 		6DE9D7D9194277000090AC80 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D8194277000090AC80 /* Scene.swift */; };
 		6DE9D7DB19427E170090AC80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DA19427E170090AC80 /* SceneDelegate.swift */; };
 		6DE9D7DD19428CC20090AC80 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DC19428CC20090AC80 /* Math.swift */; };
-		6DE9D7E019429A0E0090AC80 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DE19429A0E0090AC80 /* Main-iPad.storyboard */; };
-		6DE9D7E119429A0E0090AC80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DF19429A0E0090AC80 /* Main.storyboard */; };
 		6DE9D7E619429E690090AC80 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E219429E690090AC80 /* back@2x.png */; };
 		6DE9D7E719429E690090AC80 /* bird_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E319429E690090AC80 /* bird_1@2x.png */; };
 		6DE9D7E819429E690090AC80 /* bird_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E419429E690090AC80 /* bird_2@2x.png */; };
@@ -51,21 +50,19 @@
 		6D00495F19424141008F317A /* SprityBirdInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SprityBirdInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00496319424141008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00496419424141008F317A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		6D00496619424141008F317A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
+		6D00496619424141008F317A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../../GameViewController.swift; sourceTree = "<group>"; };
 		6D00496B19424141008F317A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		6D00497119424141008F317A /* SprityBirdInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SprityBirdInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00497619424142008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprityBirdInSwiftTests.swift; sourceTree = "<group>"; };
+		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		6DE9D7D3194261D00090AC80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6DE9D7D5194262440090AC80 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		6DE9D7D6194262F10090AC80 /* SKScrollingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollingNode.swift; sourceTree = "<group>"; };
 		6DE9D7D8194277000090AC80 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Nodes/Scene.swift; sourceTree = "<group>"; };
 		6DE9D7DA19427E170090AC80 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6DE9D7DC19428CC20090AC80 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		6DE9D7DE19429A0E0090AC80 /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
-		6DE9D7DF19429A0E0090AC80 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6DE9D7E219429E690090AC80 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		6DE9D7E319429E690090AC80 /* bird_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird_1@2x.png"; sourceTree = "<group>"; };
 		6DE9D7E419429E690090AC80 /* bird_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird_2@2x.png"; sourceTree = "<group>"; };
@@ -157,13 +154,11 @@
 		6DE9D7B2194242A40090AC80 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6DE9D7D5194262440090AC80 /* Macros.h */,
 				6DE9D7CA194243C80090AC80 /* Controllers */,
 				6DE9D7CB194243C80090AC80 /* Helpers */,
 				6DE9D7CC194243C80090AC80 /* Models */,
 				6DE9D7CD194243C80090AC80 /* Scenes */,
 				6D00496419424141008F317A /* AppDelegate.swift */,
-				6D00496619424141008F317A /* GameViewController.swift */,
 				6DE9D7D3194261D00090AC80 /* Constants.swift */,
 			);
 			path = Classes;
@@ -172,6 +167,7 @@
 		6DE9D7B3194242AE0090AC80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D376EC01942FE0D004FBF9D /* Main.storyboard */,
 				6DE9D7EA19429EB10090AC80 /* floor@2x.png */,
 				6DE9D7EB19429EB10090AC80 /* game_over@2x.png */,
 				6DE9D7EC19429EB10090AC80 /* get_ready@2x.png */,
@@ -187,8 +183,6 @@
 				6DE9D7E319429E690090AC80 /* bird_1@2x.png */,
 				6DE9D7E419429E690090AC80 /* bird_2@2x.png */,
 				6DE9D7E519429E690090AC80 /* bird_3@2x.png */,
-				6DE9D7DE19429A0E0090AC80 /* Main-iPad.storyboard */,
-				6DE9D7DF19429A0E0090AC80 /* Main.storyboard */,
 				6D00496B19424141008F317A /* Images.xcassets */,
 			);
 			path = Resources;
@@ -197,6 +191,7 @@
 		6DE9D7CA194243C80090AC80 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D00496619424141008F317A /* GameViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,14 +317,13 @@
 				6DE9D7F619429EB10090AC80 /* game_over@2x.png in Resources */,
 				6DE9D7E919429E690090AC80 /* bird_3@2x.png in Resources */,
 				6DE9D7FB19429EB10090AC80 /* medal_platinum@2x.png in Resources */,
+				6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */,
 				6DE9D7FF19429EB10090AC80 /* taptap@2x.png in Resources */,
 				6DE9D7E819429E690090AC80 /* bird_2@2x.png in Resources */,
 				6DE9D7F519429EB10090AC80 /* floor@2x.png in Resources */,
 				6DE9D7FA19429EB10090AC80 /* medal_plate@2x.png in Resources */,
 				6DE9D7FE19429EB10090AC80 /* pipe_top@2x.png in Resources */,
-				6DE9D7E119429A0E0090AC80 /* Main.storyboard in Resources */,
 				6D00496C19424141008F317A /* Images.xcassets in Resources */,
-				6DE9D7E019429A0E0090AC80 /* Main-iPad.storyboard in Resources */,
 				6DE9D7E719429E690090AC80 /* bird_1@2x.png in Resources */,
 				6DE9D7F919429EB10090AC80 /* medal_gold@2x.png in Resources */,
 				6DE9D7F719429EB10090AC80 /* get_ready@2x.png in Resources */,
@@ -469,6 +463,7 @@
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -480,6 +475,7 @@
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

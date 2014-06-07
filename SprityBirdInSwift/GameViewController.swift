@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import QuartzCore
-import SceneKit
 import SpriteKit
+import QuartzCore
 
 class GameViewController: UIViewController, SceneDelegate {
 
+    
     @IBOutlet
     var gameView: SKView
     @IBOutlet
@@ -26,36 +26,34 @@ class GameViewController: UIViewController, SceneDelegate {
     @IBOutlet
     var bestScoreLabel: UILabel
     
-    var scene: Scene
-    var flash: UIView
+    var scene: Scene?
+    var flash: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide);
         // Create and configure the scene.
+        
         scene = Scene(size: gameView.bounds.size);
-        scene.scaleMode = .AspectFill;
-        scene.fancyDelegate = self;
+        scene!.scaleMode = .AspectFill;
+        scene!.fancyDelegate = self;
         
         // Present the scene
         self.gameOverView.alpha = 0;
         self.gameOverView.transform = CGAffineTransformMakeScale(0.9, 0.9);
         
         self.gameView.presentScene(scene);
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true;
+
     }
     
     func eventStart() {
         UIView.animateWithDuration(0.2, animations: {
         self.gameOverView.alpha = 0;
         self.gameOverView.transform = CGAffineTransformMakeScale(0.8, 0.8);
-        self.flash.alpha = 0;
+        self.flash!.alpha = 0;
         self.getReadyView.alpha = 1;
             }, completion: {
-                (Bool) -> Void in self.flash.removeFromSuperview();
+                (Bool) -> Void in self.flash!.removeFromSuperview();
             });
     }
     
@@ -66,37 +64,37 @@ class GameViewController: UIViewController, SceneDelegate {
     }
     
     func eventWasted() {
-        flash = UIView(frame: self.view.frame);
-        flash.backgroundColor = UIColor.whiteColor();
-        flash.alpha = 0.9;
+        self.flash = UIView(frame: self.view.frame);
+        self.flash!.backgroundColor = UIColor.whiteColor();
+        self.flash!.alpha = 0.9;
         
         // shakeFrame
         
         UIView.animateWithDuration(0.6, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             // Display game over
-            self.flash.alpha = 0.4;
+            self.flash!.alpha = 0.4;
             self.gameOverView.alpha = 1;
             self.gameOverView.transform = CGAffineTransformMakeScale(1, 1);
             
             // Set medal
-            if(self.scene.score >= 40){
+            if(self.scene!.score >= 40){
                 self.medalImageView.image = UIImage(named: "medal_platinum");
-            }else if (self.scene.score >= 30){
+            }else if (self.scene!.score >= 30){
                 self.medalImageView.image = UIImage(named: "medal_gold");
-            }else if (self.scene.score >= 20){
+            }else if (self.scene!.score >= 20){
                 self.medalImageView.image = UIImage(named: "medal_silver");
-            }else if (self.scene.score >= 10){
+            }else if (self.scene!.score >= 10){
                 self.medalImageView.image = UIImage(named: "medal_bronze");
             }else{
                 self.medalImageView.image = nil;
             }
             
             // Set scores
-            NSString(format: "%li", self.scene.score);
-            self.currentScore.text = NSString(format: "%li", self.scene.score);
+            NSString(format: "%li", self.scene!.score);
+            self.currentScore.text = NSString(format: "%li", self.scene!.score);
             self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore());
             },
-            completion: {(Bool) -> Void in self.flash.userInteractionEnabled = false});
+            completion: {(Bool) -> Void in self.flash!.userInteractionEnabled = false});
 
     }
     
@@ -115,12 +113,4 @@ class GameViewController: UIViewController, SceneDelegate {
         self.view.layer.addAnimation(animation, forKey: "position");
     }
     
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
 }
