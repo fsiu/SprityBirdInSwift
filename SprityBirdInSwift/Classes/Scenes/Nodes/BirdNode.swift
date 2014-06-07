@@ -23,21 +23,20 @@ class BirdNode: SKSpriteNode {
     var flapForever: SKAction?
 
     init() {
-        super.init()
+        //super.init(texture: SKTexture(imageNamed: "bird_1"));
         let birdTexture1 = SKTexture(imageNamed: "bird_1");
         let birdTexture2 = SKTexture(imageNamed: "bird_2");
         let birdTexture3 = SKTexture(imageNamed: "bird_3");
         birdTexture1.filteringMode = SKTextureFilteringMode.Nearest;
         birdTexture2.filteringMode = SKTextureFilteringMode.Nearest;
         birdTexture3.filteringMode = SKTextureFilteringMode.Nearest;
+        super.init(texture: birdTexture1);
+        //self.flap = SKAction.animateWithTextures([birdTexture1, birdTexture2, birdTexture3], timePerFrame: 0.2)
+        //self.flapForever = SKAction.repeatActionForever(self.flap);
         
-        self.flap = SKAction.animateWithTextures([birdTexture1, birdTexture2, birdTexture3], timePerFrame: 0.2)
-        self.flapForever = SKAction.repeatActionForever(self.flap);
         
-        SKSpriteNode(texture: birdTexture1);
-        
-        self.texture = birdTexture1;
-        self.runAction(self.flapForever, withKey: "flapForever");
+        //self.texture = birdTexture1;
+        //self.runAction(self.flapForever, withKey: "flapForever");
     }
     
     func update(currentTime: NSTimeInterval) {

@@ -11,12 +11,12 @@ import SpriteKit
 
 class SKScrollingNode: SKSpriteNode {
 
-    var scrollingSpeed: CGFloat?
+    var scrollingSpeed: Float = Float(0.0)
     
-    class func scrollingNode(imageNamed: String, containerWidth: Float) -> AnyObject {
+    func scrollingNode(imageNamed: String, containerWidth: Float) -> SKScrollingNode {
         let image = UIImage(named: imageNamed);
         let result = SKScrollingNode(color: UIColor.clearColor(), size: CGSizeMake(containerWidth, image.size.height));
-        result.scrollingSpeed = 1;
+        result.scrollingSpeed = 1.0;
         var total:Float = 0.0;
         var totalWidth = containerWidth + image.size.width;
         while(total < totalWidth) {
@@ -32,7 +32,7 @@ class SKScrollingNode: SKSpriteNode {
     func update(currentTime: NSTimeInterval) {
         let runBlock: () -> Void = {
             for child: SKSpriteNode! in self.children  {
-                child.position = CGPointMake(child.position.x-self.scrollingSpeed!, child.position.y);
+                child.position = CGPointMake(child.position.x-self.scrollingSpeed, child.position.y);
                 if(child.position.x <= -child.size.width) {
                     var delta = child.position.x + child.size.width;
                     child.position = CGPointMake(Float(child.size.width * Float(self.children.count-1)) + delta, child.position.y);
