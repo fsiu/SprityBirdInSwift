@@ -1,11 +1,7 @@
 SprityBirdInSwift
 =================
 
-Port of SprityBird to Swift
-
-Notes
-=====
-Nearly working, Bird is breaking on tap.
+Port of SprityBird to Swift from Alexis Creuzot's Objective-C source.
 
 Authors
 =======
