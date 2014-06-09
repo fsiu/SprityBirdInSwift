@@ -79,13 +79,13 @@ class GameViewController: UIViewController, SceneDelegate {
             self.gameOverView.transform = CGAffineTransformMakeScale(1, 1);
             
             // Set medal
-            if(self.scene!.score >= 40){
+            if(self.scene!.score >= 30){
                 self.medalImageView.image = UIImage(named: "medal_platinum");
-            }else if (self.scene!.score >= 30){
-                self.medalImageView.image = UIImage(named: "medal_gold");
             }else if (self.scene!.score >= 20){
-                self.medalImageView.image = UIImage(named: "medal_silver");
+                self.medalImageView.image = UIImage(named: "medal_gold");
             }else if (self.scene!.score >= 10){
+                self.medalImageView.image = UIImage(named: "medal_silver");
+            }else if (self.scene!.score >= 0){
                 self.medalImageView.image = UIImage(named: "medal_bronze");
             }else{
                 self.medalImageView.image = nil;
