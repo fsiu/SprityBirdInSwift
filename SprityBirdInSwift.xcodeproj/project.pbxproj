@@ -12,6 +12,10 @@
 		6D00496C19424141008F317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D00496B19424141008F317A /* Images.xcassets */; };
 		6D00497819424142008F317A /* SprityBirdInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */; };
 		6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D376EC01942FE0D004FBF9D /* Main.storyboard */; };
+		6DD2E84B19462DB800EB1527 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2E84A19462DB800EB1527 /* SpriteKit.framework */; };
+		6DD2E84D19462DC000EB1527 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */; };
+		6DD2E84F19462DC600EB1527 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2E84E19462DC600EB1527 /* UIKit.framework */; };
+		6DD2E85119462DCB00EB1527 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2E85019462DCB00EB1527 /* Foundation.framework */; };
 		6DE9D7CF194243DA0090AC80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7CE194243DA0090AC80 /* Score.swift */; };
 		6DE9D7D2194247F90090AC80 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D1194247F90090AC80 /* BirdNode.swift */; };
 		6DE9D7D4194261D00090AC80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D3194261D00090AC80 /* Constants.swift */; };
@@ -56,6 +60,10 @@
 		6D00497619424142008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprityBirdInSwiftTests.swift; sourceTree = "<group>"; };
 		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6DD2E84A19462DB800EB1527 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6DD2E84E19462DC600EB1527 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6DD2E85019462DCB00EB1527 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		6DE9D7D3194261D00090AC80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -85,6 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD2E85119462DCB00EB1527 /* Foundation.framework in Frameworks */,
+				6DD2E84F19462DC600EB1527 /* UIKit.framework in Frameworks */,
+				6DD2E84D19462DC000EB1527 /* CoreGraphics.framework in Frameworks */,
+				6DD2E84B19462DB800EB1527 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +113,10 @@
 		6D00495619424141008F317A = {
 			isa = PBXGroup;
 			children = (
+				6DD2E85019462DCB00EB1527 /* Foundation.framework */,
+				6DD2E84E19462DC600EB1527 /* UIKit.framework */,
+				6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */,
+				6DD2E84A19462DB800EB1527 /* SpriteKit.framework */,
 				6D00496119424141008F317A /* SprityBirdInSwift */,
 				6D00497419424141008F317A /* SprityBirdInSwiftTests */,
 				6D00496019424141008F317A /* Products */,
@@ -120,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				6DE9D7B3194242AE0090AC80 /* Resources */,
+				6DD2E849194626A300EB1527 /* iPad */,
 				6DE9D7B2194242A40090AC80 /* Classes */,
 				6D00496219424141008F317A /* Supporting Files */,
 			);
@@ -149,6 +166,13 @@
 				6D00497619424142008F317A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DD2E849194626A300EB1527 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		6DE9D7B2194242A40090AC80 /* Classes */ = {
@@ -461,9 +485,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -473,9 +498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

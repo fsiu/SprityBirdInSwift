@@ -50,7 +50,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.createBird();
         
         self.floor!.zPosition = ++bird!.zPosition;
-        self.fancyDelegate!.eventStart();
+        //self.fancyDelegate!.eventStart();
     }
     
     func createBackground() {
@@ -85,9 +85,10 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createBird() {
-        self.bird = BirdNode();
+        self.bird = BirdNode().instance();
         self.bird!.position = CGPointMake(100, CGRectGetMidY(self.frame));
         self.bird!.name = "bird";
+        self.bird!.startPlaying();
         self.addChild(bird);
     }
     

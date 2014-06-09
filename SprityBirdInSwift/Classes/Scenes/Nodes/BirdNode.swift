@@ -22,21 +22,43 @@ class BirdNode: SKSpriteNode {
     var flap: SKAction?
     var flapForever: SKAction?
 
+    
+    /*
     init() {
-        //super.init(texture: SKTexture(imageNamed: "bird_1"));
         let birdTexture1 = SKTexture(imageNamed: "bird_1");
         let birdTexture2 = SKTexture(imageNamed: "bird_2");
         let birdTexture3 = SKTexture(imageNamed: "bird_3");
         birdTexture1.filteringMode = SKTextureFilteringMode.Nearest;
         birdTexture2.filteringMode = SKTextureFilteringMode.Nearest;
         birdTexture3.filteringMode = SKTextureFilteringMode.Nearest;
-        super.init(texture: birdTexture1);
-        //self.flap = SKAction.animateWithTextures([birdTexture1, birdTexture2, birdTexture3], timePerFrame: 0.2)
-        //self.flapForever = SKAction.repeatActionForever(self.flap);
-        
-        
-        //self.texture = birdTexture1;
+        let testSpriteNote = SKSpriteNode(texture: birdTexture1);
+        SKSpriteNode(texture: birdTexture1);
+
+        let test2 = "";
+        self.flap = SKAction.animateWithTextures([birdTexture1, birdTexture2, birdTexture3], timePerFrame: 0.2)
+        self.flapForever = SKAction.repeatActionForever(self.flap);
+
         //self.runAction(self.flapForever, withKey: "flapForever");
+        super.init(texture: birdTexture1);
+    }
+    */
+    
+    func instance() -> BirdNode {
+        let birdTexture1 = SKTexture(imageNamed: "bird_1");
+        let birdTexture2 = SKTexture(imageNamed: "bird_2");
+        let birdTexture3 = SKTexture(imageNamed: "bird_3");
+        birdTexture1.filteringMode = SKTextureFilteringMode.Nearest;
+        birdTexture2.filteringMode = SKTextureFilteringMode.Nearest;
+        birdTexture3.filteringMode = SKTextureFilteringMode.Nearest;
+
+        let result = BirdNode(texture:SKTexture(imageNamed: "bird_1"));
+        
+        result.flap = SKAction.animateWithTextures([birdTexture1, birdTexture2, birdTexture3], timePerFrame: 0.2)
+        result.flapForever = SKAction.repeatActionForever(result.flap);
+        
+        result.runAction(result.flapForever, withKey: "flapForever");
+        
+        return result;
     }
     
     func update(currentTime: NSTimeInterval) {
