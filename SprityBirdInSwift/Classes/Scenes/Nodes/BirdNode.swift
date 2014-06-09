@@ -73,8 +73,10 @@ class BirdNode: SKSpriteNode {
             let displacement = Position.goingUp ? VERTICAL_SPEED : -VERTICAL_SPEED;
             self.position = CGPointMake(self.position.x, self.position.y);
             Position.deltaPosY += displacement;
+            
+        } else {
+            self.zRotation = CGFloat(M_PI) * self.physicsBody.velocity.dy * 0.0005;
         }
-        self.zRotation = CGFloat(M_PI) * self.physicsBody.velocity.dy * 0.0005;
     }
     
     func startPlaying() {
@@ -86,9 +88,11 @@ class BirdNode: SKSpriteNode {
     }
     
     func bounce() {
-        self.physicsBody.velocity = CGVectorMake(0, 0);
-        self.physicsBody.applyImpulse(CGVectorMake(0, 40));
-        self.runAction(self.flap)
+        if(self.physicsBody) {
+            self.physicsBody.velocity = CGVectorMake(0, 0);
+            self.physicsBody.applyImpulse(CGVectorMake(0, 40));
+            self.runAction(self.flap)
+        }
     }
     
 }

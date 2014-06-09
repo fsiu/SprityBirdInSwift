@@ -49,8 +49,10 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.createObstacles();
         self.createBird();
         
-        self.floor!.zPosition = ++bird!.zPosition;
-        //self.fancyDelegate!.eventStart();
+        self.floor!.zPosition = bird!.zPosition + 1;
+        if(self.fancyDelegate) {
+            self.fancyDelegate!.eventStart();
+        }
     }
     
     func createBackground() {
@@ -88,7 +90,6 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.bird = BirdNode().instance();
         self.bird!.position = CGPointMake(100, CGRectGetMidY(self.frame));
         self.bird!.name = "bird";
-        self.bird!.startPlaying();
         self.addChild(bird);
     }
     
@@ -122,10 +123,14 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         if(self.wasted) {
             self.startGame();
         } else {
-            if(!self.bird!.physicsBody) {
+            /*
+            if(self.bird!.physicsBody) {
                 self.bird!.startPlaying();
                 self.fancyDelegate!.eventPlay();
             }
+            */
+            self.bird!.startPlaying();
+            self.fancyDelegate!.eventPlay();
             self.bird!.bounce();
         }
     }
@@ -204,8 +209,9 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
         self.wasted = true;
         Score.registerScore(self.score);
-        
-        self.fancyDelegate!.eventWasted();
+        if(self.fancyDelegate) {
+            self.fancyDelegate!.eventWasted();
+        }
     }
 }
 
