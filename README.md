@@ -9,5 +9,5 @@ Nearly working, Bird is breaking on tap.
 
 Authors
 =======
-- Frederick Siu - [@fsiu]
+- Frederick Siu - [github](https://github.com/fsiu)
 - Based on Objective-C code by [Alexis Creuzot](https://github.com/kirualex/SprityBird)
