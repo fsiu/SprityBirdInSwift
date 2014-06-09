@@ -39,5 +39,6 @@ class SKScrollingNode: SKSpriteNode {
                 }
             }
         }
+        runBlock();
     }
 }
