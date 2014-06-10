@@ -57,7 +57,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     
     func createBackground() {
         let something = self.frame;
-        self.back = SKScrollingNode().scrollingNode("back", containerWidth:self.frame.size.width);
+        self.back = SKScrollingNode.scrollingNode("back", containerWidth:self.frame.size.width);
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
         self.back!.anchorPoint = CGPointZero;
         self.back!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame);
@@ -76,7 +76,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createFloor() {
-        self.floor = SKScrollingNode().scrollingNode("floor", containerWidth: self.frame.size.width) as? SKScrollingNode;
+        self.floor = SKScrollingNode.scrollingNode("floor", containerWidth: self.frame.size.width) as? SKScrollingNode;
         self.floor!.scrollingSpeed = FLOOR_SCROLLING_SPEED;
         self.floor!.anchorPoint = CGPointZero;
         self.floor!.name = "floor";
@@ -87,7 +87,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createBird() {
-        self.bird = BirdNode().instance();
+        self.bird = BirdNode.instance();
         self.bird!.position = CGPointMake(100, CGRectGetMidY(self.frame));
         self.bird!.name = "bird";
         self.addChild(bird);
