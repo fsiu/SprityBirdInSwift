@@ -11,12 +11,12 @@ import SpriteKit
 
 class Scene : SKScene, SKPhysicsContactDelegate {
 
-    let BACK_SCROLLING_SPEED: Float = 0.5
-    let FLOOR_SCROLLING_SPEED: Float = 3.0
-    let VERTICAL_GAP_SIZE: Float = 120
-    let FIRST_OBSTACLE_PADDING: Float = 100
-    let OBSTACLE_MIN_HEIGHT: Float = 60
-    let OBSTACLE_INTERVAL_SPACE: Float = 130
+    let BACK_SCROLLING_SPEED: CGFloat = 0.5
+    let FLOOR_SCROLLING_SPEED: CGFloat = 3.0
+    let VERTICAL_GAP_SIZE: CGFloat = 120
+    let FIRST_OBSTACLE_PADDING: CGFloat = 100
+    let OBSTACLE_MIN_HEIGHT: CGFloat = 60
+    let OBSTACLE_INTERVAL_SPACE: CGFloat = 130
     
     var wasted = false;
 
@@ -40,7 +40,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func startGame() {
-        wasted = false;
+        self.wasted = false;
         self.removeAllChildren();
         
         self.createBackground();
@@ -49,7 +49,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.createObstacles();
         self.createBird();
         
-        self.floor!.zPosition = bird!.zPosition + 1;
+        self.floor!.zPosition = self.bird!.zPosition + 1;
         if(self.fancyDelegate) {
             self.fancyDelegate!.eventStart();
         }
@@ -94,8 +94,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createObstacles() {
-        self.nbObstacles = Int(ceil(NSNumber(float: self.frame.size.width/OBSTACLE_INTERVAL_SPACE).doubleValue));
-        var lastBlockPos:Float = 0.0;
+        self.nbObstacles = Int(ceil(Double(self.frame.size.width)/Double(OBSTACLE_INTERVAL_SPACE)));
+        var lastBlockPos:CGFloat = 0.0;
         self.bottomPipes = [];
         self.topPipes = [];
         for var i=0; i<self.nbObstacles ; i++ {
@@ -123,12 +123,6 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         if(self.wasted) {
             self.startGame();
         } else {
-            /*
-            if(self.bird!.physicsBody) {
-                self.bird!.startPlaying();
-                self.fancyDelegate!.eventPlay();
-            }
-            */
             self.bird!.startPlaying();
             self.fancyDelegate!.eventPlay();
             self.bird!.bounce();
@@ -166,21 +160,24 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func place(bottomPipe: SKSpriteNode, topPipe: SKSpriteNode, xPos: Float) {
+    func place(bottomPipe: SKSpriteNode, topPipe: SKSpriteNode, xPos: CGFloat) {
         let availableSpace = self.frame.size.height - self.floor!.frame.size.height;
         let maxVariance = availableSpace - (2 * OBSTACLE_MIN_HEIGHT) - VERTICAL_GAP_SIZE;
-        let variance = Math().randomFloatBetween(Float(0), max: maxVariance);
+        let test = 0.0;
+        let variance = Math().randomFloatBetween(Float(0.0), max: Float(maxVariance));
         
         let minBottomPosY = self.floor!.frame.size.height + OBSTACLE_MIN_HEIGHT - self.frame.size.height;
-        let bottomPosY = minBottomPosY + variance;
+        let bottomPosY = Float(minBottomPosY) + variance;
         
-        bottomPipe.position = CGPointMake(xPos,bottomPosY);
+
+        
+        bottomPipe.position = CGPointMake(xPos, CGFloat(bottomPosY));
         bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, bottomPipe.frame.size.width, bottomPipe.frame.size.height));
     
         bottomPipe.physicsBody.categoryBitMask = Constants.BLOCK_BIT_MASK;
         bottomPipe.physicsBody.contactTestBitMask = Constants.BIRD_BIT_MASK;
         
-        topPipe.position = CGPointMake(xPos,bottomPosY+bottomPipe.frame.size.height + VERTICAL_GAP_SIZE);
+        topPipe.position = CGPointMake(xPos,CGFloat(bottomPosY)+bottomPipe.frame.size.height + VERTICAL_GAP_SIZE);
         topPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, topPipe.frame.size.width, topPipe.frame.size.height));
         
         topPipe.physicsBody.categoryBitMask = Constants.BLOCK_BIT_MASK;

@@ -11,14 +11,16 @@ import SpriteKit
 
 class SKScrollingNode: SKSpriteNode {
 
-    var scrollingSpeed: Float = Float(0.0)
+    var scrollingSpeed: CGFloat = 0.0;
     
-    class func scrollingNode(imageNamed: String, containerWidth: Float) -> SKScrollingNode {
+    class func scrollingNode(imageNamed: String, containerWidth: CGFloat) -> SKScrollingNode {
         let image = UIImage(named: imageNamed);
-        let result = SKScrollingNode(color: UIColor.clearColor(), size: CGSizeMake(containerWidth, image.size.height));
+        let result = SKScrollingNode(color: UIColor.clearColor(), size: CGSizeMake(CGFloat(containerWidth), image.size.height));
         result.scrollingSpeed = 1.0;
-        var total:Float = 0.0;
-        var totalWidth = containerWidth + image.size.width;
+        var total:CGFloat = 0.0;
+        
+        
+        var totalWidth = CGFloat(containerWidth) + image.size.width;
         while(total < totalWidth) {
             let child = SKSpriteNode(imageNamed: imageNamed);
             child.anchorPoint = CGPointZero;
@@ -32,10 +34,10 @@ class SKScrollingNode: SKSpriteNode {
     func update(currentTime: NSTimeInterval) {
         let runBlock: () -> Void = {
             for child: SKSpriteNode! in self.children  {
-                child.position = CGPointMake(child.position.x-self.scrollingSpeed, child.position.y);
+                child.position = CGPointMake(child.position.x-CGFloat(self.scrollingSpeed), child.position.y);
                 if(child.position.x <= -child.size.width) {
                     var delta = child.position.x + child.size.width;
-                    child.position = CGPointMake(Float(child.size.width * Float(self.children.count-1)) + delta, child.position.y);
+                    child.position = CGPointMake(CGFloat(child.size.width * CGFloat(self.children.count-1)) + delta, child.position.y);
                 }
             }
         }
