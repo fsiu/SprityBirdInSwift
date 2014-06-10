@@ -39,7 +39,7 @@ class GameViewController: UIViewController, SceneDelegate {
         super.viewWillAppear(animated);
         scene = Scene(size: gameView.bounds.size);
         scene!.scaleMode = .AspectFill;
-        scene!.fancyDelegate = self;
+        scene!.sceneDelegate = self;
         
         // Present the scene
         self.gameOverView.alpha = 0;
