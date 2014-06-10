@@ -31,7 +31,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     
     var score: Int = 0;
     
-    var fancyDelegate: SceneDelegate?
+    var sceneDelegate: SceneDelegate?
     
     init(size: CGSize) {
         super.init(size: size);
@@ -50,8 +50,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.createBird();
         
         self.floor!.zPosition = self.bird!.zPosition + 1;
-        if(self.fancyDelegate) {
-            self.fancyDelegate!.eventStart();
+        if(self.sceneDelegate) {
+            self.sceneDelegate!.eventStart();
         }
     }
     
@@ -124,7 +124,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
             self.startGame();
         } else {
             self.bird!.startPlaying();
-            self.fancyDelegate!.eventPlay();
+            self.sceneDelegate!.eventPlay();
             self.bird!.bounce();
         }
     }
@@ -206,8 +206,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
         self.wasted = true;
         Score.registerScore(self.score);
-        if(self.fancyDelegate) {
-            self.fancyDelegate!.eventWasted();
+        if(self.sceneDelegate) {
+            self.sceneDelegate!.eventWasted();
         }
     }
 }
