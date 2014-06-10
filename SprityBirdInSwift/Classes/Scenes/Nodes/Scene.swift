@@ -56,8 +56,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createBackground() {
-        let something = self.frame;
         self.back = SKScrollingNode.scrollingNode("back", containerWidth:self.frame.size.width);
+        //self.setScale(2.0);
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
         self.back!.anchorPoint = CGPointZero;
         self.back!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame);
@@ -166,8 +166,6 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         
         let minBottomPosY = self.floor!.frame.size.height + OBSTACLE_MIN_HEIGHT - self.frame.size.height;
         let bottomPosY = Float(minBottomPosY) + variance;
-        
-
         
         bottomPipe.position = CGPointMake(xPos, CGFloat(bottomPosY));
         bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, bottomPipe.frame.size.width, bottomPipe.frame.size.height));
