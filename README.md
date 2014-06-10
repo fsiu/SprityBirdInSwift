@@ -1,7 +1,7 @@
 SprityBirdInSwift
 =================
 
-Port of SprityBird to Swift from Alexis Creuzot's Objective-C source.
+Port of SprityBird (Flappy Bird clone) to Swift from Alexis Creuzot's Objective-C source.
 
 Authors
 =======
