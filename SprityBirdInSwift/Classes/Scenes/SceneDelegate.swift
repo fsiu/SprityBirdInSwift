@@ -10,5 +10,5 @@ import Foundation
 protocol SceneDelegate {
     func eventStart();
     func eventPlay();
-    func eventWasted();
+    func eventBirdDeath();
 }

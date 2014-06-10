@@ -62,10 +62,10 @@ class GameViewController: UIViewController, SceneDelegate {
     func eventPlay() {
         UIView.animateWithDuration(0.5, animations: {
             self.getReadyView.alpha = 0;
-            })
+            });
     }
     
-    func eventWasted() {
+    func eventBirdDeath() {
         self.flash = UIView(frame: self.view.frame);
         self.flash!.backgroundColor = UIColor.whiteColor();
         self.flash!.alpha = 0.9;
@@ -92,7 +92,6 @@ class GameViewController: UIViewController, SceneDelegate {
             }
             
             // Set scores
-            NSString(format: "%li", self.scene!.score);
             self.currentScore.text = NSString(format: "%li", self.scene!.score);
             self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore());
             },

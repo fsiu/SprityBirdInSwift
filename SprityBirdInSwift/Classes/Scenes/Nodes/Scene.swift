@@ -18,7 +18,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     let OBSTACLE_MIN_HEIGHT: CGFloat = 60
     let OBSTACLE_INTERVAL_SPACE: CGFloat = 130
     
-    var wasted = false;
+    var birdDeath = false;
 
     var floor: SKScrollingNode?
     var back: SKScrollingNode?
@@ -40,7 +40,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func startGame() {
-        self.wasted = false;
+        self.birdDeath = false;
         self.removeAllChildren();
         
         self.createBackground();
@@ -120,7 +120,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        if(self.wasted) {
+        if(self.birdDeath) {
             self.startGame();
         } else {
             self.bird!.startPlaying();
@@ -130,15 +130,13 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(currentTime: NSTimeInterval) {
-        if(self.wasted) {
-            return;
+        if(!self.birdDeath) {
+            self.back!.update(currentTime);
+            self.floor!.update(currentTime);
+            self.bird!.update(currentTime);
+            self.updateObstacles(currentTime);
+            self.updateScore(currentTime);
         }
-        
-        self.back!.update(currentTime);
-        self.floor!.update(currentTime);
-        self.bird!.update(currentTime);
-        self.updateObstacles(currentTime);
-        self.updateScore(currentTime);
     }
     
     func updateObstacles(currentTime: NSTimeInterval) {
@@ -201,13 +199,12 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        if(self.wasted) {
-            return;
-        }
-        self.wasted = true;
-        Score.registerScore(self.score);
-        if(self.sceneDelegate) {
-            self.sceneDelegate!.eventWasted();
+        if(!self.birdDeath) {
+            self.birdDeath = true;
+            Score.registerScore(self.score);
+            if(self.sceneDelegate) {
+                self.sceneDelegate!.eventBirdDeath();
+            }
         }
     }
 }
