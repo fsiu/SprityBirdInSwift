@@ -11,17 +11,17 @@ import Foundation
 struct Score {
     static func registerScore(score: Int) {
         if(score > Score.bestScore()) {
-            setBestScore(score);
+            setBestScore(score)
         }
     }
     
     static func setBestScore(bestScore: Int) {
-        let userDefaults = NSUserDefaults.standardUserDefaults();
-        userDefaults.setInteger(bestScore, forKey: "bestScore");
-        userDefaults.synchronize();
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setInteger(bestScore, forKey: "bestScore")
+        userDefaults.synchronize()
     }
     
     static func bestScore() -> NSInteger {
-        return NSUserDefaults.standardUserDefaults().integerForKey("bestScore");
+        return NSUserDefaults.standardUserDefaults().integerForKey("bestScore")
     }
 }

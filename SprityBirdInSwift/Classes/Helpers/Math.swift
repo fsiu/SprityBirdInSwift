@@ -9,17 +9,17 @@
 import Foundation
 
 struct Math {
-    static var seed: UInt32 = 0;
+    static var seed: UInt32 = 0
     
     func setRandomSeed(seed: UInt32) {
         Math.seed = seed;
-        srand(seed);
+        srand(seed)
     }
     
     func randomFloatBetween(min: Float, max: Float) -> Float {
-        let randMaxNumerator = Float(rand() % RAND_MAX);
-        let randMaxDivisor = Float(RAND_MAX) * 1.0;
-        let random: Float = Float((randMaxNumerator / randMaxDivisor) * (max-min)) + Float(min);
-        return random;
+        let randMaxNumerator = Float(rand() % RAND_MAX)
+        let randMaxDivisor = Float(RAND_MAX) * 1.0
+        let random: Float = Float((randMaxNumerator / randMaxDivisor) * (max-min)) + Float(min)
+        return random
     }
 }
