@@ -57,10 +57,6 @@
 		6D00497619424142008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprityBirdInSwiftTests.swift; sourceTree = "<group>"; };
 		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6DD2E84A19462DB800EB1527 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6DD2E84E19462DC600EB1527 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6DD2E85019462DCB00EB1527 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
 		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
@@ -100,10 +96,6 @@
 		6D00495619424141008F317A = {
 			isa = PBXGroup;
 			children = (
-				6DD2E85019462DCB00EB1527 /* Foundation.framework */,
-				6DD2E84E19462DC600EB1527 /* UIKit.framework */,
-				6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */,
-				6DD2E84A19462DB800EB1527 /* SpriteKit.framework */,
 				6D00496119424141008F317A /* SprityBirdInSwift */,
 				6D00497419424141008F317A /* SprityBirdInSwiftTests */,
 				6D00496019424141008F317A /* Products */,
