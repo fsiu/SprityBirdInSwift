@@ -12,6 +12,7 @@
 		6D00496C19424141008F317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D00496B19424141008F317A /* Images.xcassets */; };
 		6D00497819424142008F317A /* SprityBirdInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */; };
 		6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D376EC01942FE0D004FBF9D /* Main.storyboard */; };
+		6DDEFCC71947A4D400051CDA /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */; };
 		6DE9D7CF194243DA0090AC80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7CE194243DA0090AC80 /* Score.swift */; };
 		6DE9D7D2194247F90090AC80 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D1194247F90090AC80 /* BirdNode.swift */; };
 		6DE9D7D4194261D00090AC80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D3194261D00090AC80 /* Constants.swift */; };
@@ -60,6 +61,7 @@
 		6DD2E84C19462DC000EB1527 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6DD2E84E19462DC600EB1527 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DD2E85019462DCB00EB1527 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
 		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		6DE9D7D3194261D00090AC80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		6DE9D7B3194242AE0090AC80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */,
 				6D376EC01942FE0D004FBF9D /* Main.storyboard */,
 				6DE9D7EA19429EB10090AC80 /* floor@2x.png */,
 				6DE9D7EB19429EB10090AC80 /* game_over@2x.png */,
@@ -330,6 +333,7 @@
 				6DE9D7E819429E690090AC80 /* bird_2.png in Resources */,
 				6DE9D7F519429EB10090AC80 /* floor@2x.png in Resources */,
 				6DE9D7FA19429EB10090AC80 /* medal_plate@2x.png in Resources */,
+				6DDEFCC71947A4D400051CDA /* Main-iPad.storyboard in Resources */,
 				6DE9D7FE19429EB10090AC80 /* pipe_top@2x.png in Resources */,
 				6D00496C19424141008F317A /* Images.xcassets in Resources */,
 				6DE9D7E719429E690090AC80 /* bird_1.png in Resources */,

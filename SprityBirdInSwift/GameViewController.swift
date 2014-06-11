@@ -33,10 +33,7 @@ class GameViewController: UIViewController, SceneDelegate {
         super.viewDidLoad()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide);
         // Create and configure the scene.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
+        
         scene = Scene(size: gameView.bounds.size);
         scene!.scaleMode = .AspectFill;
         scene!.sceneDelegate = self;
@@ -46,6 +43,7 @@ class GameViewController: UIViewController, SceneDelegate {
         self.gameOverView.transform = CGAffineTransformMakeScale(0.9, 0.9);
         
         self.gameView.presentScene(scene);
+
     }
     
     func eventStart() {
@@ -62,10 +60,10 @@ class GameViewController: UIViewController, SceneDelegate {
     func eventPlay() {
         UIView.animateWithDuration(0.5, animations: {
             self.getReadyView.alpha = 0;
-            })
+            });
     }
     
-    func eventWasted() {
+    func eventBirdDeath() {
         self.flash = UIView(frame: self.view.frame);
         self.flash!.backgroundColor = UIColor.whiteColor();
         self.flash!.alpha = 0.9;
@@ -92,7 +90,6 @@ class GameViewController: UIViewController, SceneDelegate {
             }
             
             // Set scores
-            NSString(format: "%li", self.scene!.score);
             self.currentScore.text = NSString(format: "%li", self.scene!.score);
             self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore());
             },
