@@ -39,6 +39,10 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.startGame();
     }
     
+    init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     func startGame() {
         self.birdDeath = false;
         self.removeAllChildren();
