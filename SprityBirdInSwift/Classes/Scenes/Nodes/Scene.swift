@@ -26,8 +26,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     var bird: BirdNode?
     var nbObstacles: Int = 0;
     
-    var topPipes: SKSpriteNode[] = [];
-    var bottomPipes: SKSpriteNode[] = [];
+    var topPipes: [SKSpriteNode] = [];
+    var bottomPipes: [SKSpriteNode] = [];
     
     var score: Int = 0;
     
@@ -37,6 +37,10 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         super.init(size: size);
         self.physicsWorld.contactDelegate = self;
         self.startGame();
+    }
+    
+    init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
     
     func startGame() {
@@ -76,7 +80,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createFloor() {
-        self.floor = SKScrollingNode.scrollingNode("floor", containerWidth: self.frame.size.width) as? SKScrollingNode;
+        self.floor = SKScrollingNode.scrollingNode("floor", containerWidth: self.frame.size.width) as SKScrollingNode;
         self.floor!.scrollingSpeed = FLOOR_SCROLLING_SPEED;
         self.floor!.anchorPoint = CGPointZero;
         self.floor!.name = "floor";

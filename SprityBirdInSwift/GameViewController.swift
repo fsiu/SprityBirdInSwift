@@ -26,7 +26,7 @@ class GameViewController: UIViewController, SceneDelegate {
     @IBOutlet
     var bestScoreLabel: UILabel
     
-    var scene: Scene
+    var scene: Scene?
     var flash: UIView?
 	
 	init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
@@ -34,13 +34,17 @@ class GameViewController: UIViewController, SceneDelegate {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	}
     
-    override func viewDidLoad() {
+    init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }    
+    
+    override func viewDidLoad()  {
         super.viewDidLoad()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         // Create and configure the scene.
-        
-        scene.scaleMode = .AspectFill
-        scene.sceneDelegate = self
+        self.scene = Scene(size: gameView.bounds.size)
+        self.scene!.scaleMode = .AspectFill
+        self.scene!.sceneDelegate = self
         
         // Present the scene
         self.gameOverView.alpha = 0
@@ -81,20 +85,20 @@ class GameViewController: UIViewController, SceneDelegate {
             self.gameOverView.transform = CGAffineTransformMakeScale(1, 1)
             
             // Set medal
-            if(self.scene.score >= 30){
+            if(self.scene!.score >= 30){
                 self.medalImageView.image = UIImage(named: "medal_platinum")
-            }else if (self.scene.score >= 20){
+            }else if (self.scene!.score >= 20){
                 self.medalImageView.image = UIImage(named: "medal_gold")
-            }else if (self.scene.score >= 10){
+            }else if (self.scene!.score >= 10){
                 self.medalImageView.image = UIImage(named: "medal_silver")
-            }else if (self.scene.score >= 0){
+            }else if (self.scene!.score >= 0){
                 self.medalImageView.image = UIImage(named: "medal_bronze")
             }else{
                 self.medalImageView.image = nil
             }
             
             // Set scores
-            self.currentScore.text = NSString(format: "%li", self.scene.score)
+            self.currentScore.text = NSString(format: "%li", self.scene!.score)
             self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore())
             },
             completion: {(Bool) -> Void in self.flash!.userInteractionEnabled = false})
