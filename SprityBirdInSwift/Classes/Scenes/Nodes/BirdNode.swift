@@ -17,8 +17,8 @@ class BirdNode: SKSpriteNode {
     var deltaPosY = 0.0;
     var goingUp = false;
     
-    var flap: SKAction?
-    var flapForever: SKAction?
+    var flap: SKAction!
+    var flapForever: SKAction!
     
     class func instance() -> BirdNode {
         let birdTexture1 = SKTexture(imageNamed: "bird_1");
@@ -39,7 +39,7 @@ class BirdNode: SKSpriteNode {
     }
     
     func update(currentTime: NSTimeInterval) {
-        if(!self.physicsBody) {
+        if(self.physicsBody == nil) {
             if(self.deltaPosY > VERTICAL_DELTA) {
                 self.goingUp = false;
             }
@@ -52,22 +52,22 @@ class BirdNode: SKSpriteNode {
             self.deltaPosY += displacement;
             
         } else {
-            self.zRotation = CGFloat(M_PI) * self.physicsBody.velocity.dy * 0.0005;
+            self.zRotation = CGFloat(M_PI) * self.physicsBody!.velocity.dy * 0.0005;
         }
     }
     
     func startPlaying() {
         self.deltaPosY = 0;
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 26, height: 18));
-        self.physicsBody.categoryBitMask = Constants.BIRD_BIT_MASK;
-        self.physicsBody.mass = 0.1;
+        self.physicsBody!.categoryBitMask = Constants.BIRD_BIT_MASK;
+        self.physicsBody!.mass = 0.1;
         self.removeActionForKey("flapForever");
     }
     
     func bounce() {
-        if(self.physicsBody) {
-            self.physicsBody.velocity = CGVectorMake(0, 0);
-            self.physicsBody.applyImpulse(CGVectorMake(0, 40));
+        if(self.physicsBody != nil) {
+            self.physicsBody!.velocity = CGVectorMake(0, 0);
+            self.physicsBody!.applyImpulse(CGVectorMake(0, 40));
             self.runAction(self.flap)
         }
     }

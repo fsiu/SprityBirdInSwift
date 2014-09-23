@@ -29,10 +29,10 @@ class SKScrollingNode: SKSpriteNode {
         }
         return result;
     }
-    
+
     func update(currentTime: NSTimeInterval) {
         let runBlock: () -> Void = {
-            for child: SKSpriteNode! in self.children  {
+            for child in self.children as [SKSpriteNode] {
                 child.position = CGPointMake(child.position.x-CGFloat(self.scrollingSpeed), child.position.y);
                 if(child.position.x <= -child.size.width) {
                     var delta = child.position.x + child.size.width;
