@@ -14,29 +14,34 @@ class GameViewController: UIViewController, SceneDelegate {
 
     
     @IBOutlet
-    var gameView: SKView
+    var gameView: SKView!
     @IBOutlet
-    var getReadyView: UIView
+    var getReadyView: UIView!
     @IBOutlet
-    var gameOverView: UIView
+    var gameOverView: UIView!
     @IBOutlet
-    var medalImageView: UIImageView
+    var medalImageView: UIImageView!
     @IBOutlet
-    var currentScore: UILabel
+    var currentScore: UILabel!
     @IBOutlet
-    var bestScoreLabel: UILabel
+    var bestScoreLabel: UILabel!
     
     var scene: Scene?
     var flash: UIView?
 	
-	init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
 		scene = Scene(size: gameView.bounds.size)
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	}
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }    
+    }
+
+    convenience override init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+
     
     override func viewDidLoad()  {
         super.viewDidLoad()

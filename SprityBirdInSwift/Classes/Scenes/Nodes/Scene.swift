@@ -33,13 +33,13 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     
     var sceneDelegate: SceneDelegate?
     
-    init(size: CGSize) {
+    required override init(size: CGSize) {
         super.init(size: size);
         self.physicsWorld.contactDelegate = self;
         self.startGame();
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -54,7 +54,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.createBird();
         
         self.floor!.zPosition = self.bird!.zPosition + 1;
-        if(self.sceneDelegate) {
+        if(self.sceneDelegate != nil) {
             self.sceneDelegate!.eventStart();
         }
     }
@@ -65,9 +65,9 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
         self.back!.anchorPoint = CGPointZero;
         self.back!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame);
-        self.back!.physicsBody.categoryBitMask = Constants.BACK_BIT_MASK;
-        self.back!.physicsBody.contactTestBitMask = Constants.BIRD_BIT_MASK;
-        self.addChild(self.back);
+        self.back!.physicsBody!.categoryBitMask = Constants.BACK_BIT_MASK;
+        self.back!.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
+        self.addChild(self.back!);
     }
     
     func createScore() {
@@ -85,16 +85,16 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.floor!.anchorPoint = CGPointZero;
         self.floor!.name = "floor";
         self.floor!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.floor!.frame);
-        self.floor!.physicsBody.categoryBitMask = Constants.FLOOR_BIT_MASK;
-        self.floor!.physicsBody.contactTestBitMask = Constants.BIRD_BIT_MASK;
-        self.addChild(floor);
+        self.floor!.physicsBody!.categoryBitMask = Constants.FLOOR_BIT_MASK;
+        self.floor!.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
+        self.addChild(floor!);
     }
     
     func createBird() {
         self.bird = BirdNode.instance();
         self.bird!.position = CGPointMake(100, CGRectGetMidY(self.frame));
         self.bird!.name = "bird";
-        self.addChild(bird);
+        self.addChild(bird!);
     }
     
     func createObstacles() {
@@ -123,7 +123,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         if(self.birdDeath) {
             self.startGame();
         } else {
@@ -144,7 +144,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func updateObstacles(currentTime: NSTimeInterval) {
-        if(!self.bird!.physicsBody) {
+        if(self.bird!.physicsBody == nil) {
             return;
         }
         
@@ -174,14 +174,14 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         bottomPipe.position = CGPointMake(xPos, CGFloat(bottomPosY));
         bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, bottomPipe.frame.size.width, bottomPipe.frame.size.height));
     
-        bottomPipe.physicsBody.categoryBitMask = Constants.BLOCK_BIT_MASK;
-        bottomPipe.physicsBody.contactTestBitMask = Constants.BIRD_BIT_MASK;
+        bottomPipe.physicsBody!.categoryBitMask = Constants.BLOCK_BIT_MASK;
+        bottomPipe.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
         
         topPipe.position = CGPointMake(xPos,CGFloat(bottomPosY)+bottomPipe.frame.size.height + VERTICAL_GAP_SIZE);
         topPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, topPipe.frame.size.width, topPipe.frame.size.height));
         
-        topPipe.physicsBody.categoryBitMask = Constants.BLOCK_BIT_MASK;
-        topPipe.physicsBody.contactTestBitMask = Constants.BIRD_BIT_MASK;
+        topPipe.physicsBody!.categoryBitMask = Constants.BLOCK_BIT_MASK;
+        topPipe.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
 
     }
     
@@ -204,7 +204,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         if(!self.birdDeath) {
             self.birdDeath = true;
             Score.registerScore(self.score);
-            if(self.sceneDelegate) {
+            if(self.sceneDelegate != nil) {
                 self.sceneDelegate!.eventBirdDeath();
             }
         }
