@@ -39,7 +39,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.startGame();
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
