@@ -16,11 +16,11 @@ class SKScrollingNode: SKSpriteNode {
     class func scrollingNode(imageNamed: String, containerWidth: CGFloat) -> SKScrollingNode {
         let image = UIImage(named: imageNamed);
         
-        let result = SKScrollingNode(color: UIColor.clearColor(), size: CGSizeMake(CGFloat(containerWidth), image.size.height));
+        let result = SKScrollingNode(color: UIColor.clearColor(), size: CGSizeMake(CGFloat(containerWidth), image!.size.height));
         result.scrollingSpeed = 1.0;
         
         var total:CGFloat = 0.0;
-        while(total < CGFloat(containerWidth) + image.size.width) {
+        while(total < CGFloat(containerWidth) + image!.size.width) {
             let child = SKSpriteNode(imageNamed: imageNamed);
             child.anchorPoint = CGPointZero;
             child.position = CGPointMake(total, 0);
