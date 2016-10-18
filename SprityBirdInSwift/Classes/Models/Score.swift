@@ -9,19 +9,19 @@
 import Foundation
 
 struct Score {
-    static func registerScore(score: Int) {
+    static func registerScore(_ score: Int) {
         if(score > Score.bestScore()) {
             setBestScore(score)
         }
     }
     
-    static func setBestScore(bestScore: Int) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setInteger(bestScore, forKey: "bestScore")
+    static func setBestScore(_ bestScore: Int) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(bestScore, forKey: "bestScore")
         userDefaults.synchronize()
     }
     
     static func bestScore() -> NSInteger {
-        return NSUserDefaults.standardUserDefaults().integerForKey("bestScore")
+        return UserDefaults.standard.integer(forKey: "bestScore")
     }
 }

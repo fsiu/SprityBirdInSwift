@@ -63,8 +63,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.back = SKScrollingNode.scrollingNode("back", containerWidth:self.frame.size.width);
         //self.setScale(2.0);
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
-        self.back!.anchorPoint = CGPointZero;
-        self.back!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame);
+        self.back!.anchorPoint = CGPoint.zero;
+        self.back!.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame);
         self.back!.physicsBody!.categoryBitMask = Constants.BACK_BIT_MASK;
         self.back!.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
         self.addChild(self.back!);
@@ -74,7 +74,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         self.score = 0;
         self.scoreLabel.text = "0";
         self.scoreLabel.fontSize = 500;
-        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 100);
+        self.scoreLabel.position = CGPoint(x: self.frame.midX, y: 100);
         self.scoreLabel.alpha = 0.2;
         self.addChild(self.scoreLabel);
     }
@@ -82,9 +82,9 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     func createFloor() {
         self.floor = SKScrollingNode.scrollingNode("floor", containerWidth: self.frame.size.width) as SKScrollingNode;
         self.floor!.scrollingSpeed = FLOOR_SCROLLING_SPEED;
-        self.floor!.anchorPoint = CGPointZero;
+        self.floor!.anchorPoint = CGPoint.zero;
         self.floor!.name = "floor";
-        self.floor!.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.floor!.frame);
+        self.floor!.physicsBody = SKPhysicsBody(edgeLoopFrom: self.floor!.frame);
         self.floor!.physicsBody!.categoryBitMask = Constants.FLOOR_BIT_MASK;
         self.floor!.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
         self.addChild(floor!);
@@ -92,7 +92,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     
     func createBird() {
         self.bird = BirdNode.instance();
-        self.bird!.position = CGPointMake(100, CGRectGetMidY(self.frame));
+        self.bird!.position = CGPoint(x: 100, y: self.frame.midY);
         self.bird!.name = "bird";
         self.addChild(bird!);
     }
@@ -102,14 +102,14 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         var lastBlockPos:CGFloat = 0.0;
         self.bottomPipes = [];
         self.topPipes = [];
-        for var i=0; i<self.nbObstacles ; i++ {
+        for i in 0 ..< self.nbObstacles {
             let topPipe = SKSpriteNode(imageNamed: "pipe_top");
-            topPipe.anchorPoint = CGPointZero;
+            topPipe.anchorPoint = CGPoint.zero;
             self.addChild(topPipe);
             self.topPipes.append(topPipe);
             
             let bottomPipe = SKSpriteNode(imageNamed: "pipe_bottom");
-            bottomPipe.anchorPoint = CGPointZero;
+            bottomPipe.anchorPoint = CGPoint.zero;
             self.addChild(bottomPipe);
             self.bottomPipes.append(bottomPipe);
             
@@ -123,7 +123,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(self.birdDeath) {
             self.startGame();
         } else {
@@ -133,7 +133,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         if(!self.birdDeath) {
             self.back!.update(currentTime);
             self.floor!.update(currentTime);
@@ -143,12 +143,12 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func updateObstacles(currentTime: NSTimeInterval) {
+    func updateObstacles(_ currentTime: TimeInterval) {
         if(self.bird!.physicsBody == nil) {
             return;
         }
         
-        for var i=0; i<self.nbObstacles; i++ {
+        for i in 0 ..< self.nbObstacles {
             let topPipe = self.topPipes[i];
             let bottomPipe = self.bottomPipes[i];
             
@@ -157,12 +157,12 @@ class Scene : SKScene, SKPhysicsContactDelegate {
                 place(bottomPipe, topPipe: topPipe, xPos: mostRightPipe.frame.origin.x + topPipe.frame.size.width + OBSTACLE_INTERVAL_SPACE);
             }
             
-            topPipe.position = CGPointMake(topPipe.frame.origin.x - FLOOR_SCROLLING_SPEED, topPipe.frame.origin.y);
-            bottomPipe.position = CGPointMake(bottomPipe.frame.origin.x - FLOOR_SCROLLING_SPEED, bottomPipe.frame.origin.y);
+            topPipe.position = CGPoint(x: topPipe.frame.origin.x - FLOOR_SCROLLING_SPEED, y: topPipe.frame.origin.y);
+            bottomPipe.position = CGPoint(x: bottomPipe.frame.origin.x - FLOOR_SCROLLING_SPEED, y: bottomPipe.frame.origin.y);
         }
     }
     
-    func place(bottomPipe: SKSpriteNode, topPipe: SKSpriteNode, xPos: CGFloat) {
+    func place(_ bottomPipe: SKSpriteNode, topPipe: SKSpriteNode, xPos: CGFloat) {
         let availableSpace = self.frame.size.height - self.floor!.frame.size.height;
         let maxVariance = availableSpace - (2 * OBSTACLE_MIN_HEIGHT) - VERTICAL_GAP_SIZE;
         let test = 0.0;
@@ -171,36 +171,36 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         let minBottomPosY = self.floor!.frame.size.height + OBSTACLE_MIN_HEIGHT - self.frame.size.height;
         let bottomPosY = Float(minBottomPosY) + variance;
         
-        bottomPipe.position = CGPointMake(xPos, CGFloat(bottomPosY));
-        bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, bottomPipe.frame.size.width, bottomPipe.frame.size.height));
+        bottomPipe.position = CGPoint(x: xPos, y: CGFloat(bottomPosY));
+        bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0,y: 0, width: bottomPipe.frame.size.width, height: bottomPipe.frame.size.height));
     
         bottomPipe.physicsBody!.categoryBitMask = Constants.BLOCK_BIT_MASK;
         bottomPipe.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
         
-        topPipe.position = CGPointMake(xPos,CGFloat(bottomPosY)+bottomPipe.frame.size.height + VERTICAL_GAP_SIZE);
-        topPipe.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0,0, topPipe.frame.size.width, topPipe.frame.size.height));
+        topPipe.position = CGPoint(x: xPos,y: CGFloat(bottomPosY)+bottomPipe.frame.size.height + VERTICAL_GAP_SIZE);
+        topPipe.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0,y: 0, width: topPipe.frame.size.width, height: topPipe.frame.size.height));
         
         topPipe.physicsBody!.categoryBitMask = Constants.BLOCK_BIT_MASK;
         topPipe.physicsBody!.contactTestBitMask = Constants.BIRD_BIT_MASK;
 
     }
     
-    func updateScore(currentTime: NSTimeInterval) {
-        for var i=0; i<self.nbObstacles; i++ {
+    func updateScore(_ currentTime: TimeInterval) {
+        for i in 0 ..< self.nbObstacles {
             let topPipe = self.topPipes[i];
             let topPipePosition = topPipe.frame.origin.x + topPipe.frame.size.width/2;
             if(topPipePosition > self.bird!.position.x && topPipePosition < self.bird!.position.x + FLOOR_SCROLLING_SPEED) {
-                self.score++;
-                self.scoreLabel.text = NSString(format: "%lu", self.score);
+                self.score += 1;
+                self.scoreLabel.text = NSString(format: "%lu", self.score) as String;
                 if(self.score>=10) {
                     self.scoreLabel.fontSize = 340;
-                    self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 120);
+                    self.scoreLabel.position = CGPoint(x: self.frame.midX, y: 120);
                 }
             }
         }
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         if(!self.birdDeath) {
             self.birdDeath = true;
             Score.registerScore(self.score);

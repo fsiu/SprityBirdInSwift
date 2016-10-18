@@ -29,40 +29,40 @@ class GameViewController: UIViewController, SceneDelegate {
     var scene: Scene?
     var flash: UIView?
 	
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
 		scene = Scene(size: gameView.bounds.size)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	}
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    convenience override init() {
+    convenience init() {
         self.init(nibName: nil, bundle: nil)
     }
 
     
     override func viewDidLoad()  {
         super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.slide)
         // Create and configure the scene.
         self.scene = Scene(size: gameView.bounds.size)
-        self.scene!.scaleMode = .AspectFill
+        self.scene!.scaleMode = .aspectFill
         self.scene!.sceneDelegate = self
         
         // Present the scene
         self.gameOverView.alpha = 0
-        self.gameOverView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+        self.gameOverView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
         self.gameView.presentScene(scene)
 
     }
     
     func eventStart() {
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
         self.gameOverView.alpha = 0
-        self.gameOverView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        self.gameOverView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         self.flash!.alpha = 0
         self.getReadyView.alpha = 1
             }, completion: {
@@ -71,23 +71,23 @@ class GameViewController: UIViewController, SceneDelegate {
     }
     
     func eventPlay() {
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.getReadyView.alpha = 0
 		});
     }
     
     func eventBirdDeath() {
         self.flash = UIView(frame: self.view.frame)
-        self.flash!.backgroundColor = UIColor.whiteColor()
+        self.flash!.backgroundColor = UIColor.white
         self.flash!.alpha = 0.9
         
         // shakeFrame
         
-        UIView.animateWithDuration(0.6, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             // Display game over
             self.flash!.alpha = 0.4
             self.gameOverView.alpha = 1
-            self.gameOverView.transform = CGAffineTransformMakeScale(1, 1)
+            self.gameOverView.transform = CGAffineTransform(scaleX: 1, y: 1)
             
             // Set medal
             if(self.scene!.score >= 30){
@@ -103,10 +103,10 @@ class GameViewController: UIViewController, SceneDelegate {
             }
             
             // Set scores
-            self.currentScore.text = NSString(format: "%li", self.scene!.score)
-            self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore())
+            self.currentScore.text = NSString(format: "%li", self.scene!.score) as String
+            self.bestScoreLabel.text = NSString(format: "%li", Score.bestScore()) as String
             },
-            completion: {(Bool) -> Void in self.flash!.userInteractionEnabled = false})
+            completion: {(Bool) -> Void in self.flash!.isUserInteractionEnabled = false})
 
     }
     
@@ -115,14 +115,14 @@ class GameViewController: UIViewController, SceneDelegate {
         animation.duration = 0.05
         animation.repeatCount = 4
         animation.autoreverses = true
-        let fromPoint = CGPointMake(self.view.center.x - 4.0, self.view.center.y)
-        let toPoint = CGPointMake(self.view.center.x + 4.0, self.view.center.y)
+        let fromPoint = CGPoint(x: self.view.center.x - 4.0, y: self.view.center.y)
+        let toPoint = CGPoint(x: self.view.center.x + 4.0, y: self.view.center.y)
         
-        let fromValue = NSValue(CGPoint: fromPoint)
-        let toValue = NSValue(CGPoint: toPoint)
+        let fromValue = NSValue(cgPoint: fromPoint)
+        let toValue = NSValue(cgPoint: toPoint)
         animation.fromValue = fromValue
         animation.toValue = toValue
-        self.view.layer.addAnimation(animation, forKey: "position")
+        self.view.layer.add(animation, forKey: "position")
     }
     
 }
