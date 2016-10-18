@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32EA22881DB69F0100573C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */; };
 		6D00496519424141008F317A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00496419424141008F317A /* AppDelegate.swift */; };
 		6D00496719424141008F317A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00496619424141008F317A /* GameViewController.swift */; };
 		6D00496C19424141008F317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D00496B19424141008F317A /* Images.xcassets */; };
@@ -48,16 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D00495F19424141008F317A /* SprityBirdInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SprityBirdInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00496319424141008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00496419424141008F317A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		6D00496619424141008F317A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../../GameViewController.swift; sourceTree = "<group>"; };
-		6D00496B19424141008F317A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		6D00496B19424141008F317A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D00497119424141008F317A /* SprityBirdInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SprityBirdInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00497619424142008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprityBirdInSwiftTests.swift; sourceTree = "<group>"; };
-		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
+		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
+		6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Main-iPad.storyboard"; path = "Resources/Main-iPad.storyboard"; sourceTree = "<group>"; };
 		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		6DE9D7D3194261D00090AC80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -114,10 +116,13 @@
 		6D00496119424141008F317A /* SprityBirdInSwift */ = {
 			isa = PBXGroup;
 			children = (
+				6D00496B19424141008F317A /* Images.xcassets */,
+				6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */,
+				6D376EC01942FE0D004FBF9D /* Main.storyboard */,
 				6DE9D7B3194242AE0090AC80 /* Resources */,
-				6DD2E849194626A300EB1527 /* iPad */,
 				6DE9D7B2194242A40090AC80 /* Classes */,
 				6D00496219424141008F317A /* Supporting Files */,
+				32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */,
 			);
 			path = SprityBirdInSwift;
 			sourceTree = "<group>";
@@ -147,13 +152,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DD2E849194626A300EB1527 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		6DE9D7B2194242A40090AC80 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +168,6 @@
 		6DE9D7B3194242AE0090AC80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */,
-				6D376EC01942FE0D004FBF9D /* Main.storyboard */,
 				6DE9D7EA19429EB10090AC80 /* floor@2x.png */,
 				6DE9D7EB19429EB10090AC80 /* game_over@2x.png */,
 				6DE9D7EC19429EB10090AC80 /* get_ready@2x.png */,
@@ -187,7 +183,6 @@
 				6DE9D7E319429E690090AC80 /* bird_1.png */,
 				6DE9D7E419429E690090AC80 /* bird_2.png */,
 				6DE9D7E519429E690090AC80 /* bird_3.png */,
-				6D00496B19424141008F317A /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -322,6 +317,7 @@
 				6DE9D7F619429EB10090AC80 /* game_over@2x.png in Resources */,
 				6DE9D7E919429E690090AC80 /* bird_3.png in Resources */,
 				6DE9D7FB19429EB10090AC80 /* medal_platinum@2x.png in Resources */,
+				32EA22881DB69F0100573C54 /* LaunchScreen.storyboard in Resources */,
 				6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */,
 				6DE9D7FF19429EB10090AC80 /* taptap@2x.png in Resources */,
 				6DE9D7E819429E690090AC80 /* bird_2.png in Resources */,
@@ -465,10 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.darkwire.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,10 +475,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SprityBirdInSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.darkwire.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
