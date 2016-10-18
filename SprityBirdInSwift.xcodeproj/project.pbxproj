@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		32EA22881DB69F0100573C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */; };
-		6D00496519424141008F317A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00496419424141008F317A /* AppDelegate.swift */; };
-		6D00496719424141008F317A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00496619424141008F317A /* GameViewController.swift */; };
+		32EA228B1DB6A08300573C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EA22891DB6A08300573C54 /* Main.storyboard */; };
+		32EA228C1DB6A08300573C54 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EA228A1DB6A08300573C54 /* Main-iPad.storyboard */; };
+		32EA229F1DB6A0D500573C54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22901DB6A0D500573C54 /* Constants.swift */; };
+		32EA22A01DB6A0D500573C54 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22921DB6A0D500573C54 /* GameViewController.swift */; };
+		32EA22A11DB6A0D500573C54 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22931DB6A0D500573C54 /* TestViewController.swift */; };
+		32EA22A21DB6A0D500573C54 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22951DB6A0D500573C54 /* Math.swift */; };
+		32EA22A31DB6A0D500573C54 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22981DB6A0D500573C54 /* Score.swift */; };
+		32EA22A41DB6A0D500573C54 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA229B1DB6A0D500573C54 /* BirdNode.swift */; };
+		32EA22A51DB6A0D500573C54 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA229C1DB6A0D500573C54 /* Scene.swift */; };
+		32EA22A61DB6A0D500573C54 /* SKScrollingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA229D1DB6A0D500573C54 /* SKScrollingNode.swift */; };
+		32EA22A71DB6A0D500573C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA229E1DB6A0D500573C54 /* SceneDelegate.swift */; };
+		32EA22A91DB6A37C00573C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA22A81DB6A37C00573C54 /* AppDelegate.swift */; };
 		6D00496C19424141008F317A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D00496B19424141008F317A /* Images.xcassets */; };
 		6D00497819424142008F317A /* SprityBirdInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */; };
-		6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D376EC01942FE0D004FBF9D /* Main.storyboard */; };
-		6DDEFCC71947A4D400051CDA /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */; };
-		6DE9D7CF194243DA0090AC80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7CE194243DA0090AC80 /* Score.swift */; };
-		6DE9D7D2194247F90090AC80 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D1194247F90090AC80 /* BirdNode.swift */; };
-		6DE9D7D4194261D00090AC80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D3194261D00090AC80 /* Constants.swift */; };
-		6DE9D7D7194262F10090AC80 /* SKScrollingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D6194262F10090AC80 /* SKScrollingNode.swift */; };
-		6DE9D7D9194277000090AC80 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7D8194277000090AC80 /* Scene.swift */; };
-		6DE9D7DB19427E170090AC80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DA19427E170090AC80 /* SceneDelegate.swift */; };
-		6DE9D7DD19428CC20090AC80 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9D7DC19428CC20090AC80 /* Math.swift */; };
 		6DE9D7E619429E690090AC80 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E219429E690090AC80 /* back@2x.png */; };
 		6DE9D7E719429E690090AC80 /* bird_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E319429E690090AC80 /* bird_1.png */; };
 		6DE9D7E819429E690090AC80 /* bird_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9D7E419429E690090AC80 /* bird_2.png */; };
@@ -50,23 +51,25 @@
 
 /* Begin PBXFileReference section */
 		32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32EA22891DB6A08300573C54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		32EA228A1DB6A08300573C54 /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
+		32EA22901DB6A0D500573C54 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		32EA22921DB6A0D500573C54 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		32EA22931DB6A0D500573C54 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		32EA22951DB6A0D500573C54 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		32EA22961DB6A0D500573C54 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		32EA22981DB6A0D500573C54 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		32EA229B1DB6A0D500573C54 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
+		32EA229C1DB6A0D500573C54 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		32EA229D1DB6A0D500573C54 /* SKScrollingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollingNode.swift; sourceTree = "<group>"; };
+		32EA229E1DB6A0D500573C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		32EA22A81DB6A37C00573C54 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D00495F19424141008F317A /* SprityBirdInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SprityBirdInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00496319424141008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D00496419424141008F317A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		6D00496619424141008F317A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../../GameViewController.swift; sourceTree = "<group>"; };
 		6D00496B19424141008F317A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D00497119424141008F317A /* SprityBirdInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SprityBirdInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D00497619424142008F317A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D00497719424142008F317A /* SprityBirdInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprityBirdInSwiftTests.swift; sourceTree = "<group>"; };
-		6D376EC01942FE0D004FBF9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Main.storyboard; sourceTree = "<group>"; };
-		6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Main-iPad.storyboard"; path = "Resources/Main-iPad.storyboard"; sourceTree = "<group>"; };
-		6DE9D7CE194243DA0090AC80 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		6DE9D7D1194247F90090AC80 /* BirdNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
-		6DE9D7D3194261D00090AC80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6DE9D7D6194262F10090AC80 /* SKScrollingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollingNode.swift; sourceTree = "<group>"; };
-		6DE9D7D8194277000090AC80 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Nodes/Scene.swift; sourceTree = "<group>"; };
-		6DE9D7DA19427E170090AC80 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DE9D7DC19428CC20090AC80 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		6DE9D7E219429E690090AC80 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		6DE9D7E319429E690090AC80 /* bird_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_1.png; sourceTree = "<group>"; };
 		6DE9D7E419429E690090AC80 /* bird_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_2.png; sourceTree = "<group>"; };
@@ -95,6 +98,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32EA228F1DB6A0D500573C54 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				32EA22901DB6A0D500573C54 /* Constants.swift */,
+				32EA22911DB6A0D500573C54 /* Controllers */,
+				32EA22941DB6A0D500573C54 /* Helpers */,
+				32EA22961DB6A0D500573C54 /* Macros.h */,
+				32EA22971DB6A0D500573C54 /* Models */,
+				32EA22991DB6A0D500573C54 /* Scenes */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		32EA22911DB6A0D500573C54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32EA22921DB6A0D500573C54 /* GameViewController.swift */,
+				32EA22931DB6A0D500573C54 /* TestViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		32EA22941DB6A0D500573C54 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				32EA22951DB6A0D500573C54 /* Math.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		32EA22971DB6A0D500573C54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32EA22981DB6A0D500573C54 /* Score.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32EA22991DB6A0D500573C54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				32EA229A1DB6A0D500573C54 /* Nodes */,
+				32EA229E1DB6A0D500573C54 /* SceneDelegate.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		32EA229A1DB6A0D500573C54 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				32EA229B1DB6A0D500573C54 /* BirdNode.swift */,
+				32EA229C1DB6A0D500573C54 /* Scene.swift */,
+				32EA229D1DB6A0D500573C54 /* SKScrollingNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
 		6D00495619424141008F317A = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +176,14 @@
 		6D00496119424141008F317A /* SprityBirdInSwift */ = {
 			isa = PBXGroup;
 			children = (
-				6D00496B19424141008F317A /* Images.xcassets */,
-				6DDEFCC61947A4D400051CDA /* Main-iPad.storyboard */,
-				6D376EC01942FE0D004FBF9D /* Main.storyboard */,
-				6DE9D7B3194242AE0090AC80 /* Resources */,
-				6DE9D7B2194242A40090AC80 /* Classes */,
-				6D00496219424141008F317A /* Supporting Files */,
+				32EA22A81DB6A37C00573C54 /* AppDelegate.swift */,
+				32EA22891DB6A08300573C54 /* Main.storyboard */,
+				32EA228A1DB6A08300573C54 /* Main-iPad.storyboard */,
 				32EA22871DB69F0100573C54 /* LaunchScreen.storyboard */,
+				6D00496B19424141008F317A /* Images.xcassets */,
+				32EA228F1DB6A0D500573C54 /* src */,
+				6DE9D7B3194242AE0090AC80 /* Resources */,
+				6D00496219424141008F317A /* Supporting Files */,
 			);
 			path = SprityBirdInSwift;
 			sourceTree = "<group>";
@@ -152,19 +213,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DE9D7B2194242A40090AC80 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				6DE9D7CA194243C80090AC80 /* Controllers */,
-				6DE9D7CB194243C80090AC80 /* Helpers */,
-				6DE9D7CC194243C80090AC80 /* Models */,
-				6DE9D7CD194243C80090AC80 /* Scenes */,
-				6D00496419424141008F317A /* AppDelegate.swift */,
-				6DE9D7D3194261D00090AC80 /* Constants.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		6DE9D7B3194242AE0090AC80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,49 +233,6 @@
 				6DE9D7E519429E690090AC80 /* bird_3.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		6DE9D7CA194243C80090AC80 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				6D00496619424141008F317A /* GameViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6DE9D7CB194243C80090AC80 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				6DE9D7DC19428CC20090AC80 /* Math.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		6DE9D7CC194243C80090AC80 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				6DE9D7CE194243DA0090AC80 /* Score.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		6DE9D7CD194243C80090AC80 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				6DE9D7DA19427E170090AC80 /* SceneDelegate.swift */,
-				6DE9D7D8194277000090AC80 /* Scene.swift */,
-				6DE9D7D0194247680090AC80 /* Nodes */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		6DE9D7D0194247680090AC80 /* Nodes */ = {
-			isa = PBXGroup;
-			children = (
-				6DE9D7D1194247F90090AC80 /* BirdNode.swift */,
-				6DE9D7D6194262F10090AC80 /* SKScrollingNode.swift */,
-			);
-			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,16 +323,16 @@
 				6DE9D7E919429E690090AC80 /* bird_3.png in Resources */,
 				6DE9D7FB19429EB10090AC80 /* medal_platinum@2x.png in Resources */,
 				32EA22881DB69F0100573C54 /* LaunchScreen.storyboard in Resources */,
-				6D376EC11942FE0D004FBF9D /* Main.storyboard in Resources */,
 				6DE9D7FF19429EB10090AC80 /* taptap@2x.png in Resources */,
 				6DE9D7E819429E690090AC80 /* bird_2.png in Resources */,
 				6DE9D7F519429EB10090AC80 /* floor@2x.png in Resources */,
+				32EA228C1DB6A08300573C54 /* Main-iPad.storyboard in Resources */,
 				6DE9D7FA19429EB10090AC80 /* medal_plate@2x.png in Resources */,
-				6DDEFCC71947A4D400051CDA /* Main-iPad.storyboard in Resources */,
 				6DE9D7FE19429EB10090AC80 /* pipe_top@2x.png in Resources */,
 				6D00496C19424141008F317A /* Images.xcassets in Resources */,
 				6DE9D7E719429E690090AC80 /* bird_1.png in Resources */,
 				6DE9D7F919429EB10090AC80 /* medal_gold@2x.png in Resources */,
+				32EA228B1DB6A08300573C54 /* Main.storyboard in Resources */,
 				6DE9D7F719429EB10090AC80 /* get_ready@2x.png in Resources */,
 				6DE9D7FC19429EB10090AC80 /* medal_silver@2x.png in Resources */,
 			);
@@ -347,15 +352,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE9D7D4194261D00090AC80 /* Constants.swift in Sources */,
-				6DE9D7D2194247F90090AC80 /* BirdNode.swift in Sources */,
-				6DE9D7DD19428CC20090AC80 /* Math.swift in Sources */,
-				6D00496719424141008F317A /* GameViewController.swift in Sources */,
-				6DE9D7D7194262F10090AC80 /* SKScrollingNode.swift in Sources */,
-				6DE9D7D9194277000090AC80 /* Scene.swift in Sources */,
-				6DE9D7CF194243DA0090AC80 /* Score.swift in Sources */,
-				6D00496519424141008F317A /* AppDelegate.swift in Sources */,
-				6DE9D7DB19427E170090AC80 /* SceneDelegate.swift in Sources */,
+				32EA22A01DB6A0D500573C54 /* GameViewController.swift in Sources */,
+				32EA22A61DB6A0D500573C54 /* SKScrollingNode.swift in Sources */,
+				32EA22A71DB6A0D500573C54 /* SceneDelegate.swift in Sources */,
+				32EA22A11DB6A0D500573C54 /* TestViewController.swift in Sources */,
+				32EA22A41DB6A0D500573C54 /* BirdNode.swift in Sources */,
+				32EA229F1DB6A0D500573C54 /* Constants.swift in Sources */,
+				32EA22A51DB6A0D500573C54 /* Scene.swift in Sources */,
+				32EA22A21DB6A0D500573C54 /* Math.swift in Sources */,
+				32EA22A91DB6A37C00573C54 /* AppDelegate.swift in Sources */,
+				32EA22A31DB6A0D500573C54 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +494,7 @@
 		6D00497F19424142008F317A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SprityBirdInSwift.app/SprityBirdInSwift";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -509,6 +516,7 @@
 		6D00498019424142008F317A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SprityBirdInSwift.app/SprityBirdInSwift";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

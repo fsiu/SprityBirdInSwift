@@ -29,15 +29,15 @@ class TestViewController: UIViewController {
         // create and add a light to the scene
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
-        lightNode.light.type = SCNLightTypeOmni
+        lightNode.light!.type = SCNLight.LightType.omni
         lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
         scene.rootNode.addChildNode(lightNode)
         
         // create and add an ambient light to the scene
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
-        ambientLightNode.light.type = SCNLightTypeAmbient
-        ambientLightNode.light.color = UIColor.darkGrayColor()
+        ambientLightNode.light!.type = SCNLight.LightType.ambient
+        ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
         
         // create and add a 3d box to the scene
@@ -48,21 +48,21 @@ class TestViewController: UIViewController {
         // create and configure a material
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "texture")
-        material.specular.contents = UIColor.grayColor()
+        material.specular.contents = UIColor.gray
         material.locksAmbientWithDiffuse = true
         
         // set the material to the 3d object geometry
-        boxNode.geometry.firstMaterial = material
+        boxNode.geometry!.firstMaterial = material
         
         // animate the 3d object
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "rotation")
-        animation.toValue = NSValue(SCNVector4: SCNVector4(x: 1, y: 1, z: 0, w: Float(M_PI)*2))
+        animation.toValue = NSValue(scnVector4: SCNVector4(x: 1, y: 1, z: 0, w: Float(M_PI)*2))
         animation.duration = 5
         animation.repeatCount = MAXFLOAT //repeat forever
         boxNode.addAnimation(animation, forKey: nil)
         
         // retrieve the SCNView
-        let scnView = self.view as SCNView
+        let scnView = self.view as! SCNView
         
         // set the scene to the view
         scnView.scene = scene
@@ -74,22 +74,22 @@ class TestViewController: UIViewController {
         scnView.showsStatistics = true
         
         // configure the view
-        scnView.backgroundColor = UIColor.blackColor()
+        scnView.backgroundColor = UIColor.black
         
         // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        let gestureRecognizers = NSMutableArray()
-        gestureRecognizers.addObject(tapGesture)
-        gestureRecognizers.addObjectsFromArray(scnView.gestureRecognizers)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        var gestureRecognizers = [UIGestureRecognizer]()
+        gestureRecognizers.append(tapGesture)
+        gestureRecognizers += scnView.gestureRecognizers ?? []
         scnView.gestureRecognizers = gestureRecognizers
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
         // retrieve the SCNView
-        let scnView = self.view as SCNView
+        let scnView = self.view as! SCNView
         
         // check what nodes are tapped
-        let p = gestureRecognize.locationInView(scnView)
+        let p = gestureRecognize.location(in: scnView)
         let hitResults = scnView.hitTest(p, options: nil)
         
         // check that we clicked on at least one object
@@ -98,37 +98,37 @@ class TestViewController: UIViewController {
             let result: AnyObject! = hitResults[0]
             
             // get its material
-            let material = result.node!.geometry.firstMaterial
+            let material = result.node!.geometry!.firstMaterial
             
             // highlight it
             SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(0.5)
+            SCNTransaction.animationDuration = 0.5
+//            SCNTransaction.setAnimationDuration(0.5)
             
             // on completion - unhighlight
-            SCNTransaction.setCompletionBlock {
+            SCNTransaction.completionBlock = {
                 SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(0.5)
+                SCNTransaction.animationDuration = 0.5
                 
-                material.emission.contents = UIColor.blackColor()
+                material!.emission.contents = UIColor.black
                 
                 SCNTransaction.commit()
             }
             
-            material.emission.contents = UIColor.redColor()
+            material!.emission.contents = UIColor.red
             
             SCNTransaction.commit()
         }
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
     
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.toRaw())
+    override var shouldAutorotate: Bool { return true }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return UIInterfaceOrientationMask.allButUpsideDown
         } else {
-            return Int(UIInterfaceOrientationMask.All.toRaw())
+            return UIInterfaceOrientationMask.all
         }
     }
     
