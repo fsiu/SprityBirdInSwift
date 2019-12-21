@@ -84,7 +84,7 @@ class TestViewController: UIViewController {
         scnView.gestureRecognizers = gestureRecognizers
     }
     
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
+    @objc func handleTap(gestureRecognize: UIGestureRecognizer) {
         // retrieve the SCNView
         let scnView = self.view as! SCNView
         

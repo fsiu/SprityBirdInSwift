@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+SprityBirdInSwift.xcodeproj/project.xcworkspace/xcshareddata
 
 ## Various settings
 *.pbxuser

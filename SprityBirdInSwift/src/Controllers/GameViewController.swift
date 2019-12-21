@@ -83,7 +83,7 @@ class GameViewController: UIViewController, SceneDelegate {
         
         // shakeFrame
         
-        UIView.animate(withDuration: 0.6, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             // Display game over
             self.flash!.alpha = 0.4
             self.gameOverView.alpha = 1
