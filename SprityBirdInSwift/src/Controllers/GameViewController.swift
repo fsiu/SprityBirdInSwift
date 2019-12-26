@@ -11,8 +11,6 @@ import SpriteKit
 import QuartzCore
 
 class GameViewController: UIViewController, SceneDelegate {
-
-    
     @IBOutlet
     var gameView: SKView!
     @IBOutlet

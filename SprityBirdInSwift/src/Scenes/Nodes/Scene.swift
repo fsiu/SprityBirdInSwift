@@ -60,7 +60,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createBackground() {
-        self.back = SKScrollingNode.scrollingNode("back", containerWidth:self.frame.size.width);
+        self.back = SKScrollingNode.scrollingNode("back", containerSize:self.frame.size);
         //self.setScale(2.0);
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
         self.back!.anchorPoint = CGPoint.zero;
