@@ -13,9 +13,9 @@ class Scene : SKScene, SKPhysicsContactDelegate {
 
     let BACK_SCROLLING_SPEED: CGFloat = 0.5
     let FLOOR_SCROLLING_SPEED: CGFloat = 3.0
-    let VERTICAL_GAP_SIZE: CGFloat = 120
+    let VERTICAL_GAP_SIZE: CGFloat = 200
     let FIRST_OBSTACLE_PADDING: CGFloat = 100
-    let OBSTACLE_MIN_HEIGHT: CGFloat = 60
+    let OBSTACLE_MIN_HEIGHT: CGFloat = 150
     let OBSTACLE_INTERVAL_SPACE: CGFloat = 130
     
     var birdDeath = false;
@@ -60,7 +60,7 @@ class Scene : SKScene, SKPhysicsContactDelegate {
     }
     
     func createBackground() {
-        self.back = SKScrollingNode.scrollingNode("back", containerWidth:self.frame.size.width);
+        self.back = SKScrollingNode.scrollingNode("back", containerSize:self.frame.size);
         //self.setScale(2.0);
         self.back!.scrollingSpeed = BACK_SCROLLING_SPEED;
         self.back!.anchorPoint = CGPoint.zero;
@@ -168,8 +168,8 @@ class Scene : SKScene, SKPhysicsContactDelegate {
         let test = 0.0;
         let variance = Math().randomFloatBetween(Float(0.0), max: Float(maxVariance));
         
-        let minBottomPosY = self.floor!.frame.size.height + OBSTACLE_MIN_HEIGHT - self.frame.size.height;
-        let bottomPosY = Float(minBottomPosY) + variance;
+        let minBottomPosY = self.floor!.frame.size.height + OBSTACLE_MIN_HEIGHT - self.frame.size.height + 300;
+        var bottomPosY = Float(minBottomPosY) + variance;
         
         bottomPipe.position = CGPoint(x: xPos, y: CGFloat(bottomPosY));
         bottomPipe.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0,y: 0, width: bottomPipe.frame.size.width, height: bottomPipe.frame.size.height));
